@@ -1,7 +1,7 @@
 app.controller('MainController',['$scope', function($scope){
-	$scope.title = 'Arb Info';
-	
 
+
+  //Array of arbitrary contacts
     $scope.contacts = 
 	[ 
   { 
@@ -35,21 +35,8 @@ app.controller('MainController',['$scope', function($scope){
   }
 ];
 
-  $scope.plusOne = function(index){
-  	$scope.contacts[index].likes += 1;
-  };
-  
-  $scope.minusOne = function(index){
-  	$scope.contacts[index].likes -= 1;
-  };
-
-  $scope.deleteContact = function(index){
-    $scope.contacts.splice([index],1);
-  };
-
-  //Add a contact
-
-  $scope.addContact = function(n,p,e,pc){
+//Add a contact
+$scope.addContact = function(n,p,e,pc){
     $scope.contacts.push({ 
     name: n, 
     phone: p, 
@@ -59,6 +46,12 @@ app.controller('MainController',['$scope', function($scope){
   })
   };
 
+//Delete Contact
+  $scope.deleteContact = function(index){
+    $scope.contacts.splice([index],1);
+  };
+
+  //Edit the contact
   $scope.updateContact = function(index,n,p,e,pc){
     console.log(n) ;
     $scope.contacts[index].name = n  || $scope.contacts[index].name;
