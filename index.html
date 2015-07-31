@@ -58,12 +58,11 @@
 
             
           <label for="usr">Name:</label>
-          <input type="text" ng-model="newCon.name" class="form-control" id="usr" /><br />
+          <input type="text" ng-model="editCon.name" class="form-control" id="usr" /><br />
 
-          <label for="usr">Phone:</label> <input type="text" ng-model="newCon.phone" class="form-control" id="usr" /><br />
-          <label for="usr">Email:</label> <input type="text" ng-model="newCon.email" class="form-control" id="usr" /><br />
-          <label for="usr">Picture:</label> <input type="text" ng-model="newCon.picture" class="form-control" id="usr" /><br />
-          <button class="btn btn-primary" ng-click="addContact(newCon.name, newCon.phone, newCon.email, newCon.picture)">Add</button>
+          <label for="usr">Phone:</label> <input type="text" ng-model="editCon.phone" class="form-control" id="usr" /><br />
+          <label for="usr">Email:</label> <input type="text" ng-model="editCon.email" class="form-control" id="usr" /><br />
+          <label for="usr">Picture:</label> <input type="text" ng-model="editCon.picture" class="form-control" id="usr" /><br />
 
            <button class="btn btn-success" ng-click="updateContact($index, editCon.name, editCon.phone, editCon.email, editCon.picture); contact.editing;contact.editing=false">Save</button> 
           <button class="btn btn-warning" ng-click="contact.editing=false">Cancel</button>
