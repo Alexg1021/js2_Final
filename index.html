@@ -11,6 +11,7 @@
 <!-- ******************** Begin Body ******************** -->
 <body ng-app="myApp">
 
+
 <!-- ******************** Header ******************** -->
   <div class="header">
     <div class="container">
@@ -22,42 +23,70 @@
 
   <div class="main" ng-controller="MainController">
     <div class="container">
+
+
       <div class="row">
-        <div>
-          Name: <input type="text" ng-model="newCon.name" /><br />
-          Phone: <input type="text" ng-model="newCon.phone" /><br />
-          Email: <input type="text" ng-model="newCon.email" /><br />
-          Picture: <input type="text" ng-model="newCon.picture" /><br />
-          <button ng-click="addContact(newCon.name, newCon.phone, newCon.email, newCon.picture)">Add New</button>
+        <div class="form-group col-md-4">
+          <label for="usr">Name:</label>
+          <input type="text" ng-model="newCon.name" class="form-control" id="usr" /><br />
+
+          <label for="usr">Phone:</label> <input type="text" ng-model="newCon.phone" class="form-control" id="usr" /><br />
+          <label for="usr">Email:</label> <input type="text" ng-model="newCon.email" class="form-control" id="usr" /><br />
+          <label for="usr">Picture:</label> <input type="text" ng-model="newCon.picture" class="form-control" id="usr" /><br />
+          <button class="btn btn-primary" ng-click="addContact(newCon.name, newCon.phone, newCon.email, newCon.picture)">Add</button>
         </div>
       </div>
 
 <!-- **************** Display Contacts ***************** -->
 
-      <div ng-repeat="contact in contacts" class="col-md-3"> 
-        <div class="thumbnail"> 
+    
+      <div ng-repeat="contact in contacts"> 
+      
+        <div class="thumbnail col-md-3"> 
           <img ng-src="{{ contact.picture }}"> 
           <p class="name">{{ contact.name }}</p> 
           <p class="phone">{{ contact.phone }}</p> 
           <p class="email">{{ contact.email }}</p> 
          
-         <button ng-click="deleteContact($index)">Delete</button>
-         <button ng-click="contact.editing = true">Edit</button>
-         <div ng-show="contact.editing" class="editData">
-          Name: <input type="text" ng-model="editCon.name" value="{{contact.name}}" /><br />
+         <button class="btn btn-danger" ng-click="deleteContact($index)">Delete</button>
+         <button class="btn btn-default" ng-click="contact.editing = true">Edit</button>
+
+      <div ng-show="contact.editing" class="editData">
+
+
+            
+          <label for="usr">Name:</label>
+          <input type="text" ng-model="newCon.name" class="form-control" id="usr" /><br />
+
+          <label for="usr">Phone:</label> <input type="text" ng-model="newCon.phone" class="form-control" id="usr" /><br />
+          <label for="usr">Email:</label> <input type="text" ng-model="newCon.email" class="form-control" id="usr" /><br />
+          <label for="usr">Picture:</label> <input type="text" ng-model="newCon.picture" class="form-control" id="usr" /><br />
+          <button class="btn btn-primary" ng-click="addContact(newCon.name, newCon.phone, newCon.email, newCon.picture)">Add</button>
+
+           <button class="btn btn-success" ng-click="updateContact($index, editCon.name, editCon.phone, editCon.email, editCon.picture); contact.editing;contact.editing=false">Save</button> 
+          <button class="btn btn-warning" ng-click="contact.editing=false">Cancel</button>
+
+
+    
+
+
+          <!-- Name: <input type="text" ng-model="editCon.name" value="{{contact.name}}" /><br />
           Phone: <input type="text" ng-model="editCon.phone" /><br />
           Email: <input type="text" ng-model="editCon.email" /><br />
-          Picture URL: <input type="url" ng-model="editCon.picture" /><br />
-          <button ng-click="updateContact($index, editCon.name, editCon.phone, editCon.email, editCon.picture); contact.editing;contact.editing=false">Save</button> 
-          <button ng-click="contact.editing=false">Cancel</button>
-
-        </div> 
-        <div>
-        </div> 
+          Picture URL: <input type="url" ng-model="editCon.picture" /><br /> -->
+         </div>
       </div>
     </div>
-  </div>
+    </div>
+
+ 
+  
+
+
   <div class="footer">
+  </div>
+
+  </div>
   </div>
 
 
